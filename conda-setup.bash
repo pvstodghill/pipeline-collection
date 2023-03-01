@@ -2,7 +2,7 @@
 
 set -e
 
-NAME=pipeline-collected
+NAME=pipeline-collection
 
 CONDA_PREFIX=$(dirname $(dirname $(type -p conda)))
 . "${CONDA_PREFIX}/etc/profile.d/conda.sh"
