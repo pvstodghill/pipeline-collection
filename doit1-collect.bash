@@ -46,7 +46,7 @@ echo 1>&2 '# Rename everthing according to metadata'
 
 cat ${DATA}/metadata.0.tsv \
     | ${PIPELINE}/scripts/make-filenames-from-metadata \
-		 -a ${COLLECT_EXCLUDE} ${COLLECT_ABBREVS} \
+		 ${COLLECT_NAME_ARGS} ${COLLECT_EXCLUDE} ${COLLECT_ABBREVS} \
 		 > ${DATA}/metadata.1.tsv
 
 mkdir -p ${GENOMES}

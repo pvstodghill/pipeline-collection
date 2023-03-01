@@ -10,14 +10,12 @@
 
 # ------------------------------------------------------------------------
 
-GENOME_NAME_ARGS=
-# GENOME_NAME_ARGS+=" -s" # Do not include genus/species in genome names
-# GENOME_NAME_ARGS+=" -a" # Remove non-alphabetic chars from genome names
-# GENOME_NAME_ARGS+=" -u" # Make genome names uppercase
-# GENOME_NAME_ARGS+=" -d" # Throw error if dup names detected
-# GENOME_NAME_ARGS+=" -D" # Mark older redundent assemblies heuristically
-
-# ------------------------------------------------------------------------
+COLLECT_NAME_ARGS=
+COLLECT_NAME_ARGS+=" -a" # Remove non-alphabetic chars from genome names
+COLLECT_NAME_ARGS+=" -D" # Mark older redundent assemblies heuristically
+# COLLECT_NAME_ARGS+=" -d" # Throw error if dup names detected
+# COLLECT_NAME_ARGS+=" -s" # Do not include genus/species in genome names
+# COLLECT_NAME_ARGS+=" -u" # Make genome names uppercase
 
 # # accessions to exclude
 # COLLECT_EXCLUDE=GCF_002307475.1 # first Pantoea allii LMG 24248
@@ -35,7 +33,6 @@ GENOME_NAME_ARGS=
 # REQUIRE_BUSCO_C=95
 # REQUIRE_BUSCO_D=5
 
-
 # ------------------------------------------------------------------------
 
 # # Run <https://github.com/rrwick/Assembly-Dereplicator/>
@@ -49,9 +46,9 @@ GENOME_NAME_ARGS=
 # Uncomment to get packages from HOWTO
 PACKAGES_FROM=howto
 
-Uncomment to use conda
-PACKAGES_FROM=conda
-CONDA_ENV=pipeline-collection
+# # Uncomment to use conda
+# PACKAGES_FROM=conda
+# CONDA_ENV=pipeline-collection
 
 #THREADS=$(nproc --all)
 
