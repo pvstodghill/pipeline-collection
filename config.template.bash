@@ -13,12 +13,17 @@
 COLLECT_NAME_ARGS=
 COLLECT_NAME_ARGS+=" -a" # Remove non-alphabetic chars from genome names
 COLLECT_NAME_ARGS+=" -D" # Mark older redundent assemblies heuristically
+COLLECT_NAME_ARGS+=" -S" # exclude "suppressed" assemblies
 # COLLECT_NAME_ARGS+=" -d" # Throw error if dup names detected
 # COLLECT_NAME_ARGS+=" -s" # Do not include genus/species in genome names
 # COLLECT_NAME_ARGS+=" -u" # Make genome names uppercase
 
 # # accessions to exclude
 # COLLECT_EXCLUDE=GCF_002307475.1 # first Pantoea allii LMG 24248
+
+#COLLECT_SUPPRESSED=yes
+COLLECT_SUPPRESSED=no
+#COLLECT_SUPPRESSED=only
 
 # # abbrevations for genome names
 # COLLECT_ABBREVS=
