@@ -16,7 +16,7 @@ mkdir ${GENOMES}
 # field separators and blank fields are lost.
 
 cat ${DATA}/metadata.1.tsv | tr '\t' '\a' | (
-    while IFS=$'\a' read NAME ACCESSION SOURCE ORGANISM STRAIN LEVEL DATE \
+    while IFS=$'\a' read NAME ACCESSION SOURCE ORGANISM STRAIN LEVEL STATUS DATE \
 	     CATEGORY TYPECODE \
 	     SEQS BASES MEDIAN MEAN N50 L50 MIN MAX \
 	     BUSCO_DB BUSCO_C BUSCO_S BUSCO_D BUSCO_F BUSCO_M BUSCO_N
