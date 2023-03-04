@@ -24,6 +24,13 @@ if [ "${RUN_DEREPLICATOR}" ] ; then
 
 fi
 
+shopt -s nullglob
+
+if [ $(ls ${GENOMES}/*.fna /dev/null | wc -l) = 1 ] ; then
+    echo 1>&2 "# nothing in ${GENOMES}"
+    exit 1
+fi
+
 # ------------------------------------------------------------------------
 # Done.
 # ------------------------------------------------------------------------
