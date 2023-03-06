@@ -14,6 +14,7 @@ COLLECT_NAME_ARGS=
 COLLECT_NAME_ARGS+=" -a" # Remove non-alphabetic chars from genome names
 COLLECT_NAME_ARGS+=" -D" # Mark older redundent assemblies heuristically
 COLLECT_NAME_ARGS+=" -S" # exclude "suppressed" assemblies
+COLLECT_NAME_ARGS+=" -r -t" # add (T) and (R) prefixes
 # COLLECT_NAME_ARGS+=" -d" # Throw error if dup names detected
 # COLLECT_NAME_ARGS+=" -s" # Do not include genus/species in genome names
 # COLLECT_NAME_ARGS+=" -u" # Make genome names uppercase
