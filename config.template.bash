@@ -7,6 +7,7 @@
 # GENOMES_DIRS=  # Points to results of pipeline-genomes
 # GENOMES_DIRS+=" ../genomes"
 # GENOMES_DIRS+=" $HOME/lab/projects/our-genomes/Pantoea_allii_*"
+GENOMES_DIRS=FIXME
 
 # ------------------------------------------------------------------------
 
