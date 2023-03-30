@@ -1,0 +1,308 @@
++ set -e
++ docker build -t pvstodghill/pipeline-collection:2023-03-29 .
+Sending build context to Docker daemon  4.124MB
+Step 1/7 : FROM pvstodghill/pvs-conda-base:latest
+ ---> fc5a88b23657
+Step 2/7 : MAINTAINER Paul Stodghill <paul.stodghill@usda.gov>
+ ---> Using cache
+ ---> 6befbee2b440
+Step 3/7 : ENV PACKAGE pipeline-collection
+ ---> Running in 5020c8507991
+Removing intermediate container 5020c8507991
+ ---> 0cd4af315e1d
+Step 4/7 : ADD conda-setup.bash /tmp
+ ---> 682e62be930b
+Step 5/7 : RUN bash -x /tmp/conda-setup.bash -f
+ ---> Running in d764c4d86fe9
+[91m+ set -e
++ NAME=pipeline-collection
+[0m[91m+ '[' target_env ']'
++ NAME=target_env
+[0m[91m++++ type -p conda
+[0m[91m+++ dirname /opt/conda/bin/conda
+[0m[91m++ dirname /opt/conda/bin
+[0m[91m+ CONDA_PREFIX=/opt/conda
+[0m[91m+ . /opt/conda/etc/profile.d/conda.sh
+[0m[91m++ export CONDA_EXE=/opt/conda/bin/conda
+++ CONDA_EXE=/opt/conda/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+[0m[91m++ '[' -z '' ']'
+++ export CONDA_SHLVL=0
+++ CONDA_SHLVL=0
+++ '[' -n '' ']'
+[0m[91m++++ dirname /opt/conda/bin/conda
+[0m[91m+++ dirname /opt/conda/bin
+[0m[91m++ PATH=/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+[0m[91m++ '[' -z '' ']'
+++ PS1=
+[0m[91m+ PACKAGES=
++ PACKAGES+=' mash'
+[0m[91m++ type -p mamba
+[0m[91m+ '[' /opt/conda/condabin/mamba ']'
+[0m[91m+ _conda='mamba --no-banner'
+[0m[91m+ '[' -f = -f ']'
+[0m[91m+ __ conda env remove -y --name target_env
+[0m[91m+ echo + conda env remove -y --name target_env
+[0m[91m+ eval conda env remove -y --name target_env
+++ conda env remove -y --name target_env
+++ local cmd=env
+++ case "$cmd" in
+[0m[91m++ __conda_exe env remove -y --name target_env
+[0m+ conda env remove -y --name target_env
+[91m++ /opt/conda/bin/conda env remove -y --name target_env
+[0m[91m
+Remove all packages in environment /opt/conda/envs/target_env:
+
+[0m[91m+ _install=update
+[0m[91m+ '[' '!' -d /opt/conda/envs/target_env ']'
++ __ conda create -y --name target_env
++ echo + conda create -y --name target_env
+[0m+ conda create -y --name target_env
+[91m+ eval conda create -y --name target_env
+++ conda create -y --name target_env
+++ local cmd=create
+++ case "$cmd" in
+[0m[91m++ __conda_exe create -y --name target_env
+[0m[91m++ /opt/conda/bin/conda create -y --name target_env
+[0mRetrieving notices: ...working... done
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+[91m
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 23.1.0
+  latest version: 23.3.0
+
+Please update conda by running
+
+    $ conda update -n base -c conda-forge conda
+
+Or to minimize the number of packages updated during conda update use
+
+     conda install conda=23.3.0
+
+
+[0m
+## Package Plan ##
+
+  environment location: /opt/conda/envs/target_env
+
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate target_env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+[91m+ _install=install
++ __ conda activate target_env
++ echo + conda activate target_env
++ eval conda activate target_env
+[0m[91m++ conda activate target_env
+++ local cmd=activate
+[0m+ conda activate target_env
+[91m++ case "$cmd" in
+++ __conda_activate activate target_env
+++ '[' -n '' ']'
+[0m[91m++ local ask_conda
+[0m[91m+++ PS1=
++++ __conda_exe shell.posix activate target_env
+[0m[91m+++ /opt/conda/bin/conda shell.posix activate target_env
+[0m[91m++ ask_conda='PS1='\''(target_env) '\''
+export PATH='\''/opt/conda/envs/target_env/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/conda/envs/target_env'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''target_env'\''
+export CONDA_PROMPT_MODIFIER='\''(target_env) '\''
+export CONDA_EXE='\''/opt/conda/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\'''
+++ eval 'PS1='\''(target_env) '\''
+export PATH='\''/opt/conda/envs/target_env/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/conda/envs/target_env'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''target_env'\''
+export CONDA_PROMPT_MODIFIER='\''(target_env) '\''
+export CONDA_EXE='\''/opt/conda/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\'''
+[0m[91m+++ PS1='(target_env) '
++++ export PATH=/opt/conda/envs/target_env/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/conda/envs/target_env/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/conda/envs/target_env
++++ CONDA_PREFIX=/opt/conda/envs/target_env
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
+[0m[91m+++ export CONDA_DEFAULT_ENV=target_env
++++ CONDA_DEFAULT_ENV=target_env
++++ export 'CONDA_PROMPT_MODIFIER=(target_env) '
++++ CONDA_PROMPT_MODIFIER='(target_env) '
++++ export CONDA_EXE=/opt/conda/bin/conda
++++ CONDA_EXE=/opt/conda/bin/conda
+[0m[91m+++ export _CE_M=
++++ _CE_M=
+[0m[91m+++ export _CE_CONDA=
++++ _CE_CONDA=
+[0m[91m+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
++++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+++ __conda_hashr
+[0m[91m++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+[0m[91m+ __ mamba --no-banner install -y mash
++ echo + mamba --no-banner install -y mash
+[0m[91m+ eval mamba --no-banner install -y mash
+[0m[91m++ mamba --no-banner install -y mash
+[0m+ mamba --no-banner install -y mash
+[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0m[91mwarning  libmamba Could not parse mod/etag header
+[0mTransaction
+
+  Prefix: /opt/conda/envs/target_env
+
+  Updating specs:
+
+   - mash
+
+
+  Package              Version  Build                Channel                    Size
+──────────────────────────────────────────────────────────────────────────────────────
+  Install:
+──────────────────────────────────────────────────────────────────────────────────────
+
+  + _libgcc_mutex          0.1  conda_forge          conda-forge/linux-64     Cached
+  + _openmp_mutex          4.5  2_gnu                conda-forge/linux-64     Cached
+  + ca-certificates  2022.12.7  ha878542_0           conda-forge/linux-64     Cached
+  + capnproto           0.10.2  h6239696_0           conda-forge/linux-64        5MB
+  + gsl                    2.7  he838d99_0           conda-forge/linux-64        3MB
+  + libblas              3.9.0  16_linux64_openblas  conda-forge/linux-64       13kB
+  + libcblas             3.9.0  16_linux64_openblas  conda-forge/linux-64       13kB
+  + libgcc-ng           12.2.0  h65d4601_19          conda-forge/linux-64     Cached
+  + libgfortran-ng      12.2.0  h69a702a_19          conda-forge/linux-64       23kB
+  + libgfortran5        12.2.0  h337968e_19          conda-forge/linux-64        2MB
+  + libgomp             12.2.0  h65d4601_19          conda-forge/linux-64     Cached
+  + libopenblas         0.3.21  pthreads_h78a6416_3  conda-forge/linux-64       11MB
+  + libstdcxx-ng        12.2.0  h46fd767_19          conda-forge/linux-64     Cached
+  + libzlib             1.2.13  h166bdaf_4           conda-forge/linux-64       66kB
+  + mash                   2.3  hd3113c8_4           bioconda/linux-64         603kB
+  + openssl             1.1.1t  h0b41bf4_0           conda-forge/linux-64     Cached
+  + zlib                1.2.13  h166bdaf_4           conda-forge/linux-64       94kB
+
+  Summary:
+
+  Install: 17 packages
+
+  Total download: 22MB
+
+──────────────────────────────────────────────────────────────────────────────────────
+
+
+
+Looking for: ['mash']
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Removing intermediate container d764c4d86fe9
+ ---> b47aa4943106
+Step 6/7 : USER guest1000
+ ---> Running in 42b61fbf7cd9
+Removing intermediate container 42b61fbf7cd9
+ ---> b77d4b26c7c8
+Step 7/7 : CMD echo Access this container with https://github.com/pvstodghill/howto
+ ---> Running in 29e554dcaa2d
+Removing intermediate container 29e554dcaa2d
+ ---> b922a3de82ab
+Successfully built b922a3de82ab
+Successfully tagged pvstodghill/pipeline-collection:2023-03-29
++ docker run --rm -w /tmp/. pvstodghill/pipeline-collection:2023-03-29 mash --version
+2.3
++ docker push pvstodghill/pipeline-collection:2023-03-29
+The push refers to repository [docker.io/pvstodghill/pipeline-collection]
+26e7de0950f9: Preparing
+846d6641812d: Preparing
+25853ad05bff: Preparing
+eaa3c25ab0f3: Preparing
+4a30ea34af41: Preparing
+405bb004357b: Preparing
+a77aa91ee9bc: Preparing
+e6e49d94af97: Preparing
+fdd89a429d10: Preparing
+474e08353c6f: Preparing
+ec09eb83ea03: Preparing
+a77aa91ee9bc: Waiting
+474e08353c6f: Waiting
+405bb004357b: Waiting
+e6e49d94af97: Waiting
+eaa3c25ab0f3: Mounted from pvstodghill/pipeline-genomes
+25853ad05bff: Mounted from pvstodghill/pipeline-genomes
+4a30ea34af41: Mounted from pvstodghill/pipeline-genomes
+405bb004357b: Mounted from pvstodghill/pipeline-genomes
+a77aa91ee9bc: Mounted from pvstodghill/pipeline-genomes
+e6e49d94af97: Mounted from pvstodghill/pipeline-genomes
+fdd89a429d10: Mounted from pvstodghill/pipeline-genomes
+474e08353c6f: Mounted from pvstodghill/pipeline-genomes
+ec09eb83ea03: Mounted from pvstodghill/pipeline-genomes
+846d6641812d: Pushed
+26e7de0950f9: Pushed
+2023-03-29: digest: sha256:26089e8d93b2d7f979459cb9c97df676a497f56c9120a5dde7ef72697ef8a635 size: 2632
++ docker tag pvstodghill/pipeline-collection:2023-03-29 pvstodghill/pipeline-collection:latest
++ docker push pvstodghill/pipeline-collection:latest
+The push refers to repository [docker.io/pvstodghill/pipeline-collection]
+26e7de0950f9: Preparing
+846d6641812d: Preparing
+25853ad05bff: Preparing
+eaa3c25ab0f3: Preparing
+4a30ea34af41: Preparing
+405bb004357b: Preparing
+a77aa91ee9bc: Preparing
+e6e49d94af97: Preparing
+fdd89a429d10: Preparing
+474e08353c6f: Preparing
+ec09eb83ea03: Preparing
+405bb004357b: Waiting
+a77aa91ee9bc: Waiting
+fdd89a429d10: Waiting
+474e08353c6f: Waiting
+e6e49d94af97: Waiting
+ec09eb83ea03: Waiting
+25853ad05bff: Layer already exists
+4a30ea34af41: Layer already exists
+26e7de0950f9: Layer already exists
+405bb004357b: Layer already exists
+846d6641812d: Layer already exists
+eaa3c25ab0f3: Layer already exists
+a77aa91ee9bc: Layer already exists
+474e08353c6f: Layer already exists
+fdd89a429d10: Layer already exists
+ec09eb83ea03: Layer already exists
+e6e49d94af97: Layer already exists
+latest: digest: sha256:26089e8d93b2d7f979459cb9c97df676a497f56c9120a5dde7ef72697ef8a635 size: 2632
+
+real	1m19.553s
+user	0m0.127s
+sys	0m0.091s

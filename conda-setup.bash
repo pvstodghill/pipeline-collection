@@ -3,6 +3,9 @@
 set -e
 
 NAME=pipeline-collection
+if [ "${TARGET_CONDA_ENV}" ] ; then
+    NAME="${TARGET_CONDA_ENV}"
+fi
 
 CONDA_PREFIX=$(dirname $(dirname $(type -p conda)))
 . "${CONDA_PREFIX}/etc/profile.d/conda.sh"
@@ -36,4 +39,4 @@ __ conda activate ${NAME}
 
 __ $_conda $_install -y ${PACKAGES}
 
-# __ pip install FIXME
+# __ pip $_install FIXME

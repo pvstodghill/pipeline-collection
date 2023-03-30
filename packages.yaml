@@ -1,6 +1,5 @@
-# https://example.com/fixme
 ---
-image: pvstodghill/fixme
-version: fixme__fixme
+image: pvstodghill/pipeline-collection
+version: 2023-03-29
 commands:
-  - fixme
+  - mash
