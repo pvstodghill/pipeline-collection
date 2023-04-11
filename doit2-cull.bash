@@ -37,6 +37,13 @@ cat ${DATA}/metadata.1.tsv | tr '\t' '\a' | (
 	    esac
 	fi
 
+	if [ "${REMOVE_DRAFT}" ] ; then
+	    if [ "$LEVEL" != "Complete Genome" ] ; then
+		echo 1>&2 "## skipping $NAME (draft)"
+		continue
+	    fi
+	fi
+
 	if [ "${REQUIRE_BUSCO_DB}" ] ; then
 	    if [ "${REQUIRE_BUSCO_DB}" != "${BUSCO_DB}" ] ; then
 		echo 1>&2 "## skipping $NAME (BUSCO_DB=${BUSCO_DB})"

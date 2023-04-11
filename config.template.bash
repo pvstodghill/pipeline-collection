@@ -36,6 +36,7 @@ COLLECT_SUPPRESSED=no
 
 # # Criteria for selecting genomes for analysis
 # REMOVE_REDUNDENT=1
+# REMOVE_DRAFT=1 # keep only level = "Complete Genome"
 # REQUIRE_BUSCO_DB=enterobacterales
 # REQUIRE_BUSCO_C=95
 # REQUIRE_BUSCO_D=5
