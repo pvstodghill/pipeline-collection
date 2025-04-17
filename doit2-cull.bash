@@ -22,8 +22,8 @@ cat ${DATA}/metadata.1.tsv | tr '\t' '\a' | (
 	     BUSCO_DB BUSCO_C BUSCO_S BUSCO_D BUSCO_F BUSCO_M BUSCO_N
     do
 	if [ "${NAME}" = "Name" ] ; then
-	    if [ ${BUSCO_N} != "n" ] ; then
-		echo 1>&2 "Something is wrong with header"
+	    if [ "${BUSCO_N}" -a "${BUSCO_N}" != "n" ] ; then
+		echo 1>&2 "Something is wrong with header: <<${BUSCO_N}>>"
 		exit 1
 	    fi
 	    continue
