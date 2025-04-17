@@ -34,7 +34,7 @@ for GENOMES_DIR in ${GENOMES_DIRS} ; do
     fi
 
     for EXT in fna faa gff ; do
-	cp --archive --no-clobber ${GENOMES_DIR}/genomes/*.${EXT} ${EXCLUDED}/
+	cp --archive --update=none ${GENOMES_DIR}/genomes/*.${EXT} ${EXCLUDED}/
     done
 done
     
