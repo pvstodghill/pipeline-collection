@@ -1,5 +1,8 @@
 ---
-image: pvstodghill/pipeline-collection
-version: 2023-10-06
+environment: stubs__mash
+packages:  mash
+channels:
+  - conda-forge
+  - bioconda
 commands:
   - mash
